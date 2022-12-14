@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Dancing+Script&family=Lato:ital,wght@1,100;1,300&family=Martian+Mono:wght@300&family=Nunito:wght@200;300&family=Rubik&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.section {
+  width: 100%;
+  min-height: 100vh;
+}
+.container {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+}
+.container-section {
+  float: left;
+  width: 55%;
+}
+.image-section {
+  float: right;
+  width: 40%;
+}
+.image-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+.content-section .title {
+  text-transform: uppercase;
+  font-size: 28px;
+}
+.content-section .content p {
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.container1 {
+  display: flex;
+  margin-left: 30px;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  gap: 50px;
+  list-style: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: larger;
+  /* margin-top: 40px; */
+  margin-left: 550px;
+  color: #62287b;
+}
+.home :hover {
+  border-bottom: 2px solid rgb(79, 63, 3);
+}
