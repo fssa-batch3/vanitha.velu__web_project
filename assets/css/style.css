@@ -1,13 +1,23 @@
 .container1 {
   display: flex;
   margin-left: 30px;
+  background-color: #62b6b7;
+  margin: 0;
 }
 body {
+  background-color: #439a97;
+  margin: 0;
+}
+.bg {
   background-image: url(../images/apple.jpg);
   background-size: cover;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 900px;
+}
+.header {
+  position: sticky;
+  top: 0;
 }
 .home {
   display: flex;
@@ -17,17 +27,12 @@ body {
   list-style: none;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: larger;
-  /* margin-top: 40px; */
-  margin-left: 550px;
-  color: #62287b;
+
+  margin-left: 300px;
+  color: black;
 }
 .home :hover {
   border-bottom: 2px solid rgb(79, 63, 3);
-}
-.chat {
-  position: relative;
-  right: 1100px;
-  margin-top: 700px;
 }
 
 .para1 {
@@ -40,12 +45,12 @@ body {
   height: 300px;
   /* margin-bottom: -200px; */
   /* background-image: url(./assets/apple.jpg); */
-  background-color: #62287b;
+  background-color: #62b6b7;
   border-radius: 10px;
   border: 0px;
   margin-left: 450px;
   padding: 30px;
-  margin-top: 950px;
+  margin-top: 200px;
 }
 .container2 h1 {
   text-align: center;
@@ -57,12 +62,12 @@ body {
   width: 150px;
   border: 0px;
   border-radius: 10px;
-  background-color: rgb(5, 5, 116);
+  background-color: green;
   color: white;
   cursor: pointer;
 }
 .btn button:hover {
-  background-color: rgb(177, 145, 86);
+  background-color: red;
 }
 
 .testimonals {
@@ -77,6 +82,9 @@ body {
   margin: auto;
   overflow: hidden;
   padding: 0 20px;
+}
+.inner h1 {
+  color: azure;
 }
 
 .border {
@@ -123,7 +131,7 @@ body {
   }
 }
 .calculator {
-  background-color: #62287b;
+  background-color: #62b6b7;
   display: flex;
 }
 .image {
