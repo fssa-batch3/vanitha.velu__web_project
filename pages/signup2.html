@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup form</title>
+    <link rel="stylesheet" href="../assets/css/signup2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign Up</h1>
+      <form id="form">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          pattern="[A-Z a-z]{1,8}"
+        /><br /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br /><br />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          pattern="[A-Z a-z 0-9]{1,20}"
+        /><br /><br />
+        <label for="password">Confirm-Password:</label>
+        <input
+          type="c-password"
+          id="c-password"
+          name="Confirm-password"
+          pattern="[A-Z a-z 0-9]{1,20}"
+        /><br /><br />
+        <button onclick="signup()" type="submit">submit</button>
+      </form>
+    </div>
+    <script>
+      let checkPass;
+      const signUpForm = document.getElementById("form");
+      signUpForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let userdata = [];
+        if (localStorage.getItem("signUp") != null) {
+          userdata = JSON.parse(localStorage.getItem("signUp"));
+        }
+        let user_name = document.getElementById("username").value.trim();
+        let user_email = document.getElementById("email").value.trim();
+        let user_password = document.getElementById("password").value.trim();
+        let confirm_password = document
+          .getElementById("c-password")
+          .value.trim();
+
+        if (user_password != confirm_password) {
+          checkPass = false;
+          alert("Password does not match");
+        }
+        if (user_password === confirm_password) {
+          checkPass = true;
+        }
+
+        if (checkPass === true) {
+          let userObj = {
+            user_name,
+            user_email,
+            user_password,
+            confirm_password,
+          };
+
+          userdata.push(userObj);
+          const str = JSON.stringify(userdata);
+          localStorage.setItem("signUp", str);
+        }
+      });
+
+      //   const sign_upForm = document.getElementById("sign_upForm");
+
+      //   // array
+
+      //   const users = [];
+
+      //   // function
+
+      //   sign_upForm.addEventListener("submit", function (event) {
+      //     event.preventDefault();
+      //     const User_name = document.getElementById("username").value;
+      //     const user_password = document.getElementById("userpass").value;
+      //     const user_email = document.getElementById("usermail").value;
+      //     const user_number = document.getElementById("usernumber").value;
+
+      //     let user_data = { User_name, user_password, user_email, user_number };
+      //     console.log(user_data);
+      //   });
+
+      //   users.push(user_data);
+
+      //   localStorage.setItem("users", JSON.stringify(users));
+
+      //   let get_data = JSON.parse (localStorage.getItem("users"));
+      //   console.(get_data)
+      //
+      // function signup() {
+      //   let user_name = document.getElementById("username").value;
+      //   let user_email = document.getElementById("email").value;
+      //   let user_password = document.getElementById("password").value;
+
+      //   let arr = [];
+      //   let user = {
+      //     username: user_name,
+      //     email: user_email,
+      //     password: user_password,
+      //   };
+
+      //   let json = JSON.strigify(user);
+      //   localStorage.setItem("name", json);
+
+      //   if (localStorage.getItem("data") == null) {
+      //     localStorage.setItem("data", []);
+      //   }
+
+      //   let fst_data = JSON.parse(localStorage.getItem("data"));
+      //   fst_data.push(user);
+
+      //   localStorage.setItem("data", JSON.stringify(fst_data));
+      //   alert("user value added");
+      // }
+    </script>
+  </body>
+</html>

@@ -3,7 +3,8 @@
   margin-left: 30px;
 }
 body {
-  background: linear-gradient(#439a97, pink);
+  background: linear-gradient(#f9f9f9, rgb(125, 123, 123));
+  font-family: "Montserrat", sans-serif;
 }
 
 .home {
@@ -13,10 +14,13 @@ body {
   gap: 50px;
   list-style: none;
   font-size: larger;
-  /* margin-top: 40px; */
-  margin-left: 300px;
+  margin-top: 40px;
+  /* margin-left: 300px; */
+}
+.home a {
   color: black;
 }
+
 .home :hover {
   border-bottom: 2px solid rgb(79, 63, 3);
 }
@@ -25,7 +29,9 @@ body {
   margin-top: 60px;
 }
 .container p {
-  width: 700;
+  width: 700px;
+  font-size: 25px;
+  margin-left: 300px;
 }
 .rap {
   display: flex;
@@ -92,4 +98,7 @@ ul {
 .footer-col .social-links a:hover {
   color: aliceblue;
   background-color: rgb(74, 71, 71);
+}
+a {
+  text-decoration: none;
 }

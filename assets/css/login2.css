@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#f9f9f9, rgb(125, 123, 123));
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 200px;
+}
+
+form {
+  display: inline-block;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="c-password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+input:valid {
+  border-color: green;
+  /* border: 2px; */
+}
+input:invalid {
+  background-color: red;
+}
+
+button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+label {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
