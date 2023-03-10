@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(#f9f9f9, rgb(125, 123, 123));
+  overflow: hidden;
 }
 .whole-div {
   padding: 25%;
@@ -27,6 +28,8 @@ select {
   background: black;
   height: 500px;
   border-radius: 20px;
+  position: relative;
+  bottom: 200px;
 }
 a {
   text-decoration: none;

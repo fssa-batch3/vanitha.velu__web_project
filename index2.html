@@ -180,14 +180,24 @@
         <div>
           <h2>BMI Calculator</h2>
           <form>
-            <label>weight(kg)</label>
+            <!-- <label>weight(kg)</label>
             <input type="text" id="name" placeholder="(kg)" /><br /><br /><br />
           </form>
           <form>
             <label>height(cm)</label>
             <input type="text" id="name" placeholder="(cm)" /><br />
           </form>
-          <button>calculate BMI</button>
+          <button>calculate BMI</button> -->
+          <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" /><br />
+
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" name="height" /><br />
+
+    <button onclick="calculateBMI()">Calculate BMI</button><br />
+
+    <div id="result"></div>
+
           <img
             src="./assets/images/bmi-removebg-preview.png"
             width="150"
@@ -230,5 +240,16 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      function calculateBMI() {
+        event.preventDefault();
+        let weight = parseFloat(document.getElementById("weight").value);
+        let height = parseFloat(document.getElementById("height").value) / 100; // Convert cm to m
+        let bmi = weight / (height * height);
+        document.getElementById("result").innerHTML =
+          "Your BMI is " + bmi.toFixed(2);
+      }
+    </script>
   </body>
 </html>

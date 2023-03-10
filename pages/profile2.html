@@ -113,6 +113,7 @@
       // });
 
       let oneUser = JSON.parse(localStorage.getItem("login"));
+      console.log(oneUser)
       // for array
       let Array = JSON.parse(localStorage.getItem("signUp"));
       let selectedUser = Array.find(function (event) {
@@ -162,6 +163,9 @@
         localStorage.setItem("signUp", JSON.stringify(Array));
         alert("successfully changed");
       });
+
+      //
+
       let delete_user = document.getElementById("delete");
       delete_user.addEventListener("click", function (event) {
         event.preventDefault();

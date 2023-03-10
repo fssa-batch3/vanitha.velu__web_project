@@ -136,75 +136,42 @@
     </footer>
 
     <script>
-      let doctors = [
-        {
-          doctorname: "Dt.padmadharshini",
-          qualification: "Dietitian & Branch manager.",
-          image: "../assets/images/padma.jpg",
-          alt: "doctor-img",
-          btn: "Book an apoinment",
-        },
-        {
-          doctorname: "Dt.Ramya",
-          qualification: "Nutrionist",
-          image: "../assets/images/ramya.webp",
-          alt: "doctor-img",
-          btn: "Book an apoinment",
-        },
-        {
-          doctorname: "Dt.Vidhya",
-          qualification: "Dietitian",
-          image: "../assets/images/vidhya.jpg",
-          alt: "doctor-img",
-          btn: "Book an apoinment",
-        },
-        {
-          doctorname: "Dt.Pavi",
-          qualification: "Nutrionist",
-          image: "../assets/images/pavi.webp",
-          alt: "doctor-img",
-          btn: "Book an apoinment",
-        },
-        {
-          doctorname: "Dt.Manoj",
-          qualification: "Nutrionist & Quality Manager",
-          image: "../assets/images/manoj.jpeg",
-          alt: "doctor-img",
-          btn: "Book an apoinment",
-        },
-        {
-          doctorname: "Dt.Kavya",
-          qualification: "Dietitian",
-          image: "../assets/images/kavya.jpg",
-          alt: "doctor-img",
-          btn: "Book an apoinment",
-        },
-      ];
+      let doctors = JSON.parse(localStorage.getItem("main"));
+      console.log(doctors);
+
       for (let i = 0; i < doctors.length; i++) {
         let div_card = document.createElement("div");
+        div_card.setAttribute("id", doctors[i]["id"]);
+        div_card.setAttribute("onclick", "dietUpdate(this.id)");
         div_card.setAttribute("class", "image");
 
         let card_img = document.createElement("img");
-        card_img.setAttribute("src", doctors[i].image);
+        card_img.setAttribute("src", doctors[i]["img"]);
         card_img.setAttribute("height", "350");
         card_img.setAttribute("width", "350");
         div_card.append(card_img);
 
         let h3_card = document.createElement("h3");
-        h3_card.innerText = doctors[i].doctorname;
+        h3_card.innerText = doctors[i]["name"];
         div_card.append(h3_card);
 
         let p_card = document.createElement("p");
-        p_card.innerText = doctors[i].qualification;
+        p_card.innerText = doctors[i]["spl"];
         div_card.append(p_card);
 
         let btn_card = document.createElement("button");
-        // btn_card.setAttribute("class", "btn");
-        btn_card.innerText = doctors[i].btn;
+        // btn_card.setAttribute("href", "./form2.html");
+        btn_card.innerText = "Appointment";
         div_card.append(btn_card);
 
         let container = document.querySelector(".container");
         container.append(div_card);
+      }
+
+      // function for getting id for diet
+
+      function dietUpdate(e) {
+        console.log(e);
       }
     </script>
   </body>

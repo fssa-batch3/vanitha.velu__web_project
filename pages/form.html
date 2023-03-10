@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assests/style.css/doctorslog.css" />
+  </head>
+  <body>
+    <form id="form">
+      <div class="inputBox">
+        <input id="image" type="text" name="" required="required" />
+        <span>Image Url</span>
+      </div>
+      <div class="inputBox">
+        <input id="docname" type="text" name="" required="required" />
+        <span>Doctor Name</span>
+      </div>
+      <div class="inputBox">
+        <input id="Special" type="text" name="" required="required" />
+        <span>specialist</span>
+      </div>
+      <button type="submit" class="btn5">Send</button>
+    </form>
+    <script>
+      document.getElementById("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        let arr = [];
+
+        if (localStorage.getItem("main") != null) {
+          arr = JSON.parse(localStorage.getItem("main"));
+        }
+
+        let img = document.getElementById("image").value;
+
+        let name = document.getElementById("docname").value;
+
+        let spl = document.getElementById("Special").value;
+        let dietId = Date.now();
+
+        let mainObject = {
+          img,
+          name,
+          spl,
+          id: dietId,
+        };
+
+        arr.push(mainObject);
+        localStorage.setItem("main", JSON.stringify(arr));
+      });
+    </script>
+  </body>
+</html>

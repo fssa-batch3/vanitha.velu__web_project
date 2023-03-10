@@ -34,7 +34,7 @@
           name="Confirm-password"
           pattern="[A-Z a-z 0-9]{1,20}"
         /><br /><br />
-        <button onclick="signup()" type="submit">submit</button>
+        <button type="submit">submit</button>
       </form>
     </div>
     <script>
@@ -57,12 +57,8 @@
         if (user_password != confirm_password) {
           checkPass = false;
           alert("Password does not match");
-        }
-        if (user_password === confirm_password) {
-          checkPass = true;
-        }
-
-        if (checkPass === true) {
+          return;
+        } else {
           let userObj = {
             user_name,
             user_email,
@@ -76,57 +72,7 @@
         }
       });
 
-      //   const sign_upForm = document.getElementById("sign_upForm");
-
-      //   // array
-
-      //   const users = [];
-
-      //   // function
-
-      //   sign_upForm.addEventListener("submit", function (event) {
-      //     event.preventDefault();
-      //     const User_name = document.getElementById("username").value;
-      //     const user_password = document.getElementById("userpass").value;
-      //     const user_email = document.getElementById("usermail").value;
-      //     const user_number = document.getElementById("usernumber").value;
-
-      //     let user_data = { User_name, user_password, user_email, user_number };
-      //     console.log(user_data);
-      //   });
-
-      //   users.push(user_data);
-
-      //   localStorage.setItem("users", JSON.stringify(users));
-
-      //   let get_data = JSON.parse (localStorage.getItem("users"));
-      //   console.(get_data)
-      //
-      // function signup() {
-      //   let user_name = document.getElementById("username").value;
-      //   let user_email = document.getElementById("email").value;
-      //   let user_password = document.getElementById("password").value;
-
-      //   let arr = [];
-      //   let user = {
-      //     username: user_name,
-      //     email: user_email,
-      //     password: user_password,
-      //   };
-
-      //   let json = JSON.strigify(user);
-      //   localStorage.setItem("name", json);
-
-      //   if (localStorage.getItem("data") == null) {
-      //     localStorage.setItem("data", []);
-      //   }
-
-      //   let fst_data = JSON.parse(localStorage.getItem("data"));
-      //   fst_data.push(user);
-
-      //   localStorage.setItem("data", JSON.stringify(fst_data));
-      //   alert("user value added");
-      // }
+     
     </script>
   </body>
 </html>
