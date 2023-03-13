@@ -25,19 +25,19 @@
         </div>
         <div class="input">
           <label>Specialization:</label
-          ><input id="specialization" class="input_edit" type="text" disabled />
+          ><input id="specialization" class="input_edit" type="text" />
         </div>
         <div class="input">
           <label>Email:</label
-          ><input id="email" class="input_edit" type="email" disabled />
+          ><input id="email" class="input_edit" type="email" />
         </div>
         <div class="input">
           <label>Password:</label
-          ><input id="password" class="input_edit" type="password" disabled />
+          ><input id="password" class="input_edit" type="password" />
         </div>
         <div class="input">
           <label>Address:</label
-          ><input class="input_edit" id="address" type="text" disabled />
+          ><input class="input_edit" id="address" type="text" />
         </div>
         <div class="btn">
           <button type="submit">Save</button>
@@ -48,72 +48,8 @@
     </div>
 
     <script>
-      // const profile = JSON.parse(localStorage.getItem("login"));
-      // const signup_del = JSON.parse(localStorage.getItem("signUp"));
-
-      // console.log(profile);
-
-      // document.getElementById("name").value = profile[0]["user_name"];
-      // document.getElementById("email").value = profile[0]["user_email"];
-      // document.getElementById("password").value = profile[0]["user_password"];
-
-      // // edit user data
-
-      // const all_input = document.querySelectorAll(".input_edit");
-      // console.log(all_input);
-
-      // function edit() {
-      //   // event.preventDefault();
-      //   for (i = 0; i < all_input.length; i++) {
-      //     all_input[i].removeAttribute("disabled");
-      //   }
-      // }
-
-      // const editProfile = document.getElementById("editForm");
-      // console.log(editProfile);
-
-      // editProfile.addEventListener("submit", function (event) {
-      //   event.preventDefault();
-
-      //   // let editArr = [];
-
-      //   const name = document.getElementById("name").value.trim();
-      //   console.log(name);
-      //   const number = document.getElementById("phnumber").value.trim();
-      //   const qualification = document
-      //     .getElementById("qualification")
-      //     .value.trim();
-      //   const address = document.getElementById("address").value.trim();
-      //   const editEmail = document.getElementById("email").value.trim();
-      //   const specialization = document
-      //     .getElementById("specialization")
-      //     .value.trim();
-
-      //   let userEditObj = {
-      //     user_name: name,
-      //     user_email: editEmail,
-      //     specialization: specialization,
-      //   };
-      //   console.log(userEditObj);
-
-      //   const returnData = JSON.parse(localStorage.getItem("login"));
-      //   console.log(returnData);
-
-      //   const check = returnData.find((m) => m.user_email == editEmail);
-      //   console.log(check);
-      //   console.log(check.user_email);
-
-      //   if (check.user_email != editEmail) {
-      //     alert("You can't change the email");
-      //     return false;
-      //   } else {
-      //     const objectAssign = Object.assign(check, userEditObj);
-      //     console.log(objectAssign);
-      //   }
-      // });
-
       let oneUser = JSON.parse(localStorage.getItem("login"));
-      console.log(oneUser)
+      console.log(oneUser);
       // for array
       let Array = JSON.parse(localStorage.getItem("signUp"));
       let selectedUser = Array.find(function (event) {
