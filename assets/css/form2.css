@@ -27,7 +27,7 @@ select {
 .whole-1 {
   background: black;
   height: 500px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   position: relative;
   bottom: 200px;
 }
