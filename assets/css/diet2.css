@@ -34,9 +34,9 @@ body {
   justify-content: center;
   gap: 30px;
 }
-.container img {
+/* .container img {
   border-top-left-radius: 20px;
-}
+} */
 
 .rap {
   display: flex;
@@ -105,8 +105,8 @@ ul {
   color: aliceblue;
   background-color: rgb(74, 71, 71);
 }
-button {
-  background-color: rgb(0, 119, 255);
+.batton {
+  /* background-color: rgb(0, 119, 255); */
   border: none;
   border-radius: 10px;
   height: 40px;

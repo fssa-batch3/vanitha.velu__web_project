@@ -159,8 +159,12 @@
         p_card.innerText = doctors[i]["spl"];
         div_card.append(p_card);
 
-        let btn_card = document.createElement("button");
-        // btn_card.setAttribute("href", "./form2.html");
+        let btn_card = document.createElement("a");
+        btn_card.setAttribute(
+          "href",
+          "./dietitian_detail.html?id=" + doctors[i]["id"]
+        );
+        btn_card.setAttribute("class", "batton  ");
         btn_card.innerText = "Appointment";
         div_card.append(btn_card);
 

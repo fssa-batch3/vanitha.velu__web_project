@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dietitian Image Change</title>
+    <link rel="stylesheet" href="../assets/css/dietitian_detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="container">
+        <div class="product-div">
+          <div class="product-div-left">
+            <div id="dietitian" class="img-container">
+              <img src="../assets/images/muthu slim.jfif" alt="" />
+            </div>
+          </div>
+          <div class="product-div-right">
+            <span id="dietitian_name" class="product-name">Kamalesh</span>
+            <span id="experience">6 years Experience</span>
+
+            <p id="about" class="product-description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
+              animi ad minima veritatis dolore. Architecto facere dignissimos
+              voluptate fugit ratione molestias quis quidem exercitationem
+              voluptas.
+            </p>
+            <div class="btn-groups">
+              <button type="submit" class="add-cart-btn">
+                Book appoinment
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // get value from page
+      let image = document.getElementById("dietitian").value;
+      let name = document.getElementById("dietitian_name").value;
+      let years = document.getElementById("experience").value;
+      let about = document.getElementById("about").value;
+
+      // get data from localStorage
+      let all = JSON.parse(localStorage.getItem("main"));
+      console.log("all");
+
+      // assign key and variable
+      let object = {
+        image,
+        name,
+        years,
+        about,
+        // id: dietId,
+      };
+    </script>
+  </body>
+</html>

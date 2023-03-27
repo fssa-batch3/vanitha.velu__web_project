@@ -16,7 +16,7 @@
         <input id="docname" type="text" name="" required="required" />
         <span>Plan Name</span>
       </div>
-      <div class="inputBox">
+      <!-- <div class="inputBox">
         <input id="Special" type="text" name="" required="required" />
         <span>Image Url2</span>
       </div>
@@ -27,8 +27,35 @@
       <div class="inputBox">
         <input id="Special" type="text" name="" required="required" />
         <span>Image Url3</span>
-      </div>
+      </div> -->
       <button type="submit" class="btn5">Send</button>
     </form>
+    <script>
+      document.getElementById("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        let arr = [];
+
+        if (localStorage.getItem("main") != null) {
+          arr = JSON.parse(localStorage.getItem("main"));
+        }
+
+        let img = document.getElementById("image").value;
+
+        let name = document.getElementById("planname").value;
+
+        // let spl = document.getElementById("Special").value;
+        // let dietId = Date.now();
+
+        let mainObject = {
+          img,
+          name,
+          spl,
+          // id: dietId,
+        };
+
+        arr.push(mainObject);
+        localStorage.setItem("main", JSON.stringify(arr));
+      });
+    </script>
   </body>
 </html>

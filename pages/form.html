@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../assests/style.css/doctorslog.css" />
+    <!-- <link rel="stylesheet" href="../assests/style.css/doctorslog.css" /> -->
   </head>
   <body>
     <form id="form">
@@ -20,6 +20,14 @@
       <div class="inputBox">
         <input id="Special" type="text" name="" required="required" />
         <span>specialist</span>
+      </div>
+      <div class="inputBox">
+        <input id="experience" type="text" name="" required="required" />
+        <span>Experience</span>
+      </div>
+      <div class="inputBox">
+        <input id="about" type="text" name="" required="required" />
+        <span>About</span>
       </div>
       <button type="submit" class="btn5">Send</button>
     </form>
@@ -37,12 +45,20 @@
         let name = document.getElementById("docname").value;
 
         let spl = document.getElementById("Special").value;
+
+        let Experience = document.getElementById("experience").value;
+
+        let About = document.getElementById("about").value;
+
         let dietId = Date.now();
+        console.log("dietId");
 
         let mainObject = {
           img,
           name,
           spl,
+          Experience,
+          About,
           id: dietId,
         };
 
