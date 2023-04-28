@@ -106,15 +106,17 @@ ul {
   background-color: rgb(74, 71, 71);
 }
 .batton {
-  /* background-color: rgb(0, 119, 255); */
-  border: none;
-  border-radius: 10px;
-  height: 40px;
-  margin-bottom: 5px;
-  margin-left: 130px;
+  background-color: rgb(0, 136, 255);
+  border: 2px solid rgb(0, 136, 255);
+  margin-right: 8px;
+  height: 30px;
+  margin-left: 120px;
+  width: 120px;
+  margin-bottom: 10px;
 }
-.btn button:hover {
-  background-color: grey;
+.batton:hover {
+  background-color: #fff;
+  color: rgb(0, 136, 255);
 }
 .image h3 {
   text-align: center;

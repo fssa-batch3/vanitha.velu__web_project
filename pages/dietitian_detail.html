@@ -19,20 +19,15 @@
       <div class="container">
         <div class="product-div">
           <div class="product-div-left">
-            <div id="dietitian" class="img-container">
-              <img src="../assets/images/muthu slim.jfif" alt="" />
+            <div class="img-container">
+              <img id="dietitian" />
             </div>
           </div>
           <div class="product-div-right">
-            <span id="dietitian_name" class="product-name">Kamalesh</span>
-            <span id="experience">6 years Experience</span>
+            <span id="dietitian_name" class="product-name"></span>
+            <span id="experience"></span>
 
-            <p id="about" class="product-description">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
-              animi ad minima veritatis dolore. Architecto facere dignissimos
-              voluptate fugit ratione molestias quis quidem exercitationem
-              voluptas.
-            </p>
+            <p id="about" class="product-description"></p>
             <div class="btn-groups">
               <button type="submit" class="add-cart-btn">
                 Book appoinment
@@ -44,24 +39,34 @@
     </div>
 
     <script>
-      // get value from page
-      let image = document.getElementById("dietitian").value;
-      let name = document.getElementById("dietitian_name").value;
-      let years = document.getElementById("experience").value;
-      let about = document.getElementById("about").value;
+      // get value from URL
+
+      const c_id = window.location.search;
+      const c_params = new URLSearchParams(c_id);
+      const get_details = c_params.get("id");
+      console.log(get_details);
 
       // get data from localStorage
       let all = JSON.parse(localStorage.getItem("main"));
       console.log("all");
 
-      // assign key and variable
-      let object = {
-        image,
-        name,
-        years,
-        about,
-        // id: dietId,
-      };
+      let selectedUser = all.find(function (event) {
+        let diet_id = event["id"];
+        if (get_details == diet_id) {
+          return true;
+        }
+      });
+      console.log(selectedUser);
+      // get value from page
+      let image = document.getElementById("dietitian");
+      let name = document.getElementById("dietitian_name");
+      let years = document.getElementById("experience");
+      let about = document.getElementById("about");
+
+      image.setAttribute("src", selectedUser["img"]);
+      name.innerText = selectedUser["name"];
+      years.innerText = selectedUser["Experience"];
+      about.innerText = selectedUser["About"];
     </script>
   </body>
 </html>

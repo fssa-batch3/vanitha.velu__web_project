@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>signup form</title>
-    <link rel="stylesheet" href="../assets/css/signup2.css" />
+    <link rel="stylesheet" href="../assets/css/patient_signup.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Sign Up</h1>
+      <h1>Patient Sign Up</h1>
       <form id="form">
         <label for="username">Username:</label>
         <input
@@ -47,8 +47,8 @@
         event.preventDefault();
 
         let userdata = [];
-        if (localStorage.getItem("signUp") != null) {
-          userdata = JSON.parse(localStorage.getItem("signUp"));
+        if (localStorage.getItem("patient_signUp") != null) {
+          userdata = JSON.parse(localStorage.getItem("patient_signUp"));
         }
         let user_name = document.getElementById("username").value.trim();
         let user_email = document.getElementById("email").value.trim();
@@ -71,7 +71,7 @@
 
           userdata.push(userObj);
           const str = JSON.stringify(userdata);
-          localStorage.setItem("signUp", str);
+          localStorage.setItem("patient_signUp", str);
           alert("Successfully Created your Account");
           window.location.href = "../index2.html";
         }
