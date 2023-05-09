@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>apt-list</title>
+    <link rel="stylesheet" href="../assets/css/appoinment_list.css" />
+  </head>
+  <body>
+    <h2>Appoinment-List's</h2>
+    <div class="order_list">
+      <!-- <div id="a-form" class="a-form">
+        <pre>Name             : <span id="name"></span></pre>
+        <pre>Email            : <span id="email"></span></pre>
+        <pre>Phone Number     : <span id="phoneNmber"></span></pre>
+        <pre>Date             : <span id="date"></span></pre>
+        <pre>Time             : <span id="time"></span></pre>
+        <pre>Department       : <span id="department"></span></pre>
+        <div class="both-btn"></div>
+
+        <div class="btn">
+          <a class="verifybtn" href="">Accept</a>
+          <a class="verifybtn" href="">cancel</a>
+        </div>
+      </div> -->
+    </div>
+
+    <script>
+      const apt_list = JSON.parse(localStorage.getItem("appoinmentList"));
+      console.log(apt_list);
+      const login = JSON.parse(localStorage.getItem("login"));
+      console.log(login);
+
+      for (let i = 0; i < apt_list.length; i++) {
+        const formDiv = document.createElement("div");
+        formDiv.setAttribute("id", "a-form");
+
+        // Create a new div element for name
+        const nameDiv = document.createElement("div");
+        const namePre = document.createElement("pre");
+        namePre.textContent = "Name             : ";
+        const nameSpan = document.createElement("span");
+        nameSpan.setAttribute("id", "name");
+        nameSpan.innerText = apt_list[i]["Name"];
+        namePre.appendChild(nameSpan);
+        nameDiv.appendChild(namePre);
+
+        console.log(apt_list[i]["Name"]);
+
+        // Create a new div element for email
+        const emailDiv = document.createElement("div");
+        const emailPre = document.createElement("pre");
+        emailPre.textContent = "Email            : ";
+        const emailSpan = document.createElement("span");
+        emailSpan.id = "email";
+        emailSpan.innerText = apt_list[i]["Email"];
+        emailPre.appendChild(emailSpan);
+        emailDiv.appendChild(emailPre);
+
+        // Create a new div element for phone number
+        const phoneNumberDiv = document.createElement("div");
+        const phoneNumberPre = document.createElement("pre");
+        phoneNumberPre.textContent = "Phone number     : ";
+        const phoneNumberSpan = document.createElement("span");
+        phoneNumberSpan.id = "phoneNumber";
+        phoneNumberSpan.innerText = apt_list[i]["PhoneNumber"];
+        phoneNumberPre.appendChild(phoneNumberSpan);
+        phoneNumberDiv.appendChild(phoneNumberPre);
+
+        // // Create a new div element for date
+        const dateDiv = document.createElement("div");
+        const dateNamePre = document.createElement("pre");
+        dateNamePre.textContent = "Date             : ";
+        const dateNameSpan = document.createElement("span");
+        dateNameSpan.id = "date";
+        dateNameSpan.innerText = apt_list[i]["Date"];
+        dateNamePre.appendChild(dateNameSpan);
+        dateDiv.appendChild(dateNamePre);
+
+        // Create a new div element for time
+        const timeDiv = document.createElement("div");
+        const timePre = document.createElement("pre");
+        timePre.textContent = "Time period      : ";
+        const timeSpan = document.createElement("span");
+        timeSpan.id = "time";
+        timeSpan.innerText = apt_list[i]["Time"];
+        timePre.appendChild(timeSpan);
+        timeDiv.appendChild(timePre);
+
+        // Create a new div element for departmentSpan
+        const departmentDiv = document.createElement("div");
+        const departmentPre = document.createElement("pre");
+        departmentPre.textContent = "Department       :";
+        const departmentSpan = document.createElement("span");
+        departmentSpan.id = "department";
+        departmentSpan.innerText = apt_list[i]["Department"];
+        departmentPre.appendChild(departmentSpan);
+        departmentDiv.appendChild(departmentPre);
+        // Create a new div element for both buttons
+        const bothBtnDiv = document.createElement("div");
+        bothBtnDiv.classList.add("both-btn");
+        // Create a new accept button
+        const acceptBtn = document.createElement("a");
+        acceptBtn.classList.add("verifybtn");
+        acceptBtn.href = "#";
+        acceptBtn.textContent = "Accept";
+        // Create a new cancel button
+        const notAcceptBtn = document.createElement("a");
+        notAcceptBtn.classList.add("verifybtn");
+        notAcceptBtn.href = "#";
+        notAcceptBtn.textContent = "cancel";
+
+        // Append all the elements to the form div
+        formDiv.appendChild(nameDiv);
+        formDiv.appendChild(emailDiv);
+        formDiv.appendChild(phoneNumberDiv);
+        formDiv.appendChild(dateDiv);
+        formDiv.appendChild(timeDiv);
+        formDiv.appendChild(departmentDiv);
+        formDiv.appendChild(bothBtnDiv);
+        bothBtnDiv.appendChild(acceptBtn);
+        bothBtnDiv.appendChild(notAcceptBtn);
+        document.querySelector(".order_list").append(formDiv);
+
+        console.log(formDiv);
+      }
+    </script>
+  </body>
+</html>

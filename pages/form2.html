@@ -17,6 +17,9 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
 
+        <label for="number">Phone Number:</label>
+        <input type="number" id="phonenumber" name="number" required />
+
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" required />
 
@@ -37,40 +40,59 @@
     <script>
       const form = document.getElementById("form");
 
-      const arr = [];
-      let appoinments = {};
+      // let appoinments = {};
 
-      form.addEventListener("submit", (event) => {
+      form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let date = document.getElementById("date").value;
-        let time = document.getElementById("time").value;
-        let department = document.getElementById("department").value;
+        let arr = [];
+        console.log(arr);
 
-        appoinments["Name"] = name;
-        appoinments["Email"] = email;
-        appoinments["Date"] = date;
-        appoinments["Time"] = time;
-        appoinments["Department"] = department;
+        if (localStorage.getItem("appoinmentList") != null) {
+          arr = JSON.parse(localStorage.getItem("appoinmentList"));
+        }
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const number = document.getElementById("phonenumber").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const department = document.getElementById("department").value;
+        const userId = Date.now();
+
+        let appoinments = {
+          Name: name,
+          Email: email,
+          PhoneNumber: number,
+          Date: date,
+          Time: time,
+          Department: department,
+        };
+
         console.log(appoinments);
 
         // localStorage.setItem("appointment", JSON.stringify(appointment));
 
-        if (window.localStorage.getItem("appoinments") === null) {
-          arr.push(appoinments);
-          console.log(arr);
-          window.localStorage.setItem("appoinments", JSON.stringify(arr));
-        } else {
-          let local = window.localStorage.getItem("appoinments");
-          let json = JSON.parse(local);
-          arr.push(appoinments);
+        // if (window.localStorage.getItem("appoinments") === null) {
+        //   arr.push(appoinments);
+        //   console.log(arr);
+        //   window.localStorage.setItem("appoinments", JSON.stringify(arr));
+        // } else {
+        //   let local = window.localStorage.getItem("appoinments");
+        //   let json = JSON.parse(local);
+        //   arr.push(appoinments);
 
-          json.push(arr);
-          window.localStorage.setItem("appoinments", JSON.stringify(json));
-          alert("Appointment booked successfully!");
-        }
+        //   json.push(arr);
+        //   window.localStorage.setItem("appoinments", JSON.stringify(json));
+        //   alert("Appointment booked successfully!");
+
+        //   console.log(appoinments);
+        // }
+
+        arr.push(appoinments);
+        const str = JSON.stringify(arr);
+        alert("Appoinment booked successfully");
+        window.localStorage.setItem("appoinmentList", str);
       });
     </script>
   </body>

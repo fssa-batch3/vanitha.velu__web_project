@@ -40,6 +40,45 @@
         <button type="submit">submit</button>
       </form>
     </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      import {
+        getDatabase,
+        set,
+        ref,
+        onValue,
+        push,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD2u2kaaofh9colJXah7WdKmfojbd2Z4Yw",
+        authDomain: "wellness-diet.firebaseapp.com",
+        projectId: "wellness-diet",
+        storageBucket: "wellness-diet.appspot.com",
+        messagingSenderId: "928060559294",
+        appId: "1:928060559294:web:eacf7adfb3b2bfb7e0b3ef",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      let database = getDatabase();
+
+      console.log(database);
+
+      const starCountRef = ref(database, "name/");
+      onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+      });
+    </script>
+
     <script>
       let checkPass;
       const signUpForm = document.getElementById("form");
@@ -73,7 +112,7 @@
           const str = JSON.stringify(userdata);
           localStorage.setItem("signUp", str);
           alert("Successfully Created your Account");
-          window.location.href = "../index2.html";
+          window.location.href = "../index.html";
         }
       });
     </script>

@@ -9,10 +9,11 @@ h1 {
   margin-top: 50px;
 }
 .main {
-  background-color: rgb(202, 220, 215);
+  background-color: #03c988;
   width: 400px;
   margin-left: 500px;
   margin-top: 120px;
+  border-radius: 10px;
 }
 
 form {
@@ -31,6 +32,7 @@ label {
 
 input[type="text"],
 input[type="email"],
+input[type="number"],
 input[type="date"],
 input[type="time"],
 select {

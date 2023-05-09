@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>home page</title>
 
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link
@@ -13,57 +13,65 @@
     />
   </head>
   <body>
-    <div class="container1" id="content-1">
-      <div class="logo">
+    
+      <header>
+        <div class="wrapper">
+          <h1 class="logo">WELLNESS<span>DIET</span></h1>
+          <nav class="main-nav">
+            <ul>
+              <li>
+                <a href="./index.html">Home </a>
+              </li>
+              <li>
+                <a href="./pages/about2.html">About</a>
+              </li>
+              <li>
+                <a href="./pages/diet2.html">Consultation</a>
+              </li>
+              <li>
+                <a href="./pages/active.html">Create plans</a>
+              </li>
+              <li>
+                <a href="./pages/contact2.html">Contact Us</a>
+              </li>
+              <li class="nav_dropdown">
+                <a class="drop_btn" href="javascript:void(0)"><div class="nav_dropbtn">Login</div></a>
+                <div class="dropdown-content">
+                  <a href="./pages/login2.html">Dietitian</a>
+                  <a href="./pages/patient_login.html">Patient</a>
+                </div>
+              </li>
+
+            </ul>
+          </nav>
+      </header>
+      
+    <div id="holecontains">
+      <div class="fst">
+        <h2>Get a diet plan that suits your body!</h2>
+        <p>
+          Our website provides a variety of diet plans to help you achieve your
+          fitness goals. Whether you're looking to lose weight, gain muscle, or
+          simply maintain a healthy lifestyle, we have a plan that's right for
+          you.
+        </p>
+        <div class="btn">
+          <a href="./pages/form2.html"
+            ><button><strong>Book an Appoinment</strong></button></a
+          >
+        </div>
+      </div>
+      
+
+      <section class="heart" id="main">
         <img
-          src="./assets/images/large-removebg-preview_-removebg-preview (1).png"
-          height="100"
-          width="150"
+          src="https://c0.wallpaperflare.com/preview/587/674/531/heart-health-pulse-fruit.jpg"
           alt=""
         />
-      </div>
-      <div class="header">
-        <ul class="home">
-          <a href="./index.html"><li>HOME</li></a>
-          <a href="./pages/plan2.html"><li>DIET PLANS</li></a>
-          <a href="./pages/diet2.html"><li>CONSULTATION</li></a>
-          <a href="./pages/about2.html"> <li>ABOUT</li></a>
-          <a href="./pages/contact2.html"> <li>CONTACT</li></a>
-          <!-- <a href="./pages/login2.html"> <li>LOGIN</li></a> -->
-          <div class="nav_dropdown">
-            <button class="nav_dropbtn">Login</button>
-            <div class="nav_dropdown-content">
-              <a href="./pages/login2.html">Dietitian</a>
-              <a href="./pages/patient_login.html">Patient</a>
-            </div>
-          </div>
-        </ul>
-      </div>
+      </section>
     </div>
 
-    <div class="bg"></div>
 
-    <div class="container2">
-      <div class="counsel">
-        <h1>Diet Counselling</h1>
-        <hr />
-      </div>
-      <div class="content1">
-        <h1>Get a diet plan that suits your body!</h1>
-      </div>
-      <div class="para1">
-        <h2>
-          There are a plethora of diet programmes to select from, but how do you
-          know which one is best for you and your body type? That is why you
-          require our experts.
-        </h2>
-      </div>
-      <div class="btn">
-        <a href="../pages/form.html"
-          ><button><strong>Book an Appoinment</strong></button></a
-        >
-      </div>
-    </div>
 
     <div class="testimonals">
       <div class="inner">
@@ -152,14 +160,39 @@
       </div>
     </div>
     <div class="calculator">
-      <div class="image">
+      <!-- <div class="image">
         <img
           src="./assets/images/running girl image.webp"
           height="250"
           width="400"
           alt=""
         />
-      </div>
+      </div> -->
+      <!-- <h2>BMI Value</h2> -->
+    <div class="main3">
+      <table>
+        <tr>
+          <th>BMI Range</th>
+          <th>Classification</th>
+        </tr>
+        <tr>
+          <td>Less than 18.5</td>
+          <td>Underweight</td>
+        </tr>
+        <tr>
+          <td>18.5 - 24.9</td>
+          <td>Normal weight</td>
+        </tr>
+        <tr>
+          <td>25 - 29.9</td>
+          <td>Overweight</td>
+        </tr>
+        <tr>
+          <td>30 or greater</td>
+          <td>Obese</td>
+        </tr>
+      </table>
+    </div>
       <div class="bmi">
         <div>
           <h2>BMI Calculator</h2>
@@ -224,7 +257,18 @@
         let bmi = weight / (height * height);
         document.getElementById("result").innerHTML =
           "Your BMI is " + bmi.toFixed(2);
-      }
+
+          if(bmi <= 18){
+            alert ("You are in under weight you must do something for improve your health!")
+          }else if (bmi >= 18 &&  bmi <= 25){
+            alert("Everything is cool! you are in healthy weight")
+            } else if(bmi >= 25 &&  bmi <= 29){
+              alert("You are in over weight do something for maintain a healthy weight")
+            } else {
+              alert("Oh my dear! you got obesity do something for maintain a healthy weight")
+            }
+          }
+      
     </script>
   </body>
 </html>
