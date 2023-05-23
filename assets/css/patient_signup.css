@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font-family: Arial, sans-serif;
-  background: white;
+  background: linear-gradient(#f9f9f9, rgb(125, 123, 123));
   height: 100vh;
   overflow: hidden;
 }
@@ -31,10 +31,9 @@ input[type="c-password"] {
 }
 input:valid {
   border-color: green;
-  /* border: 2px; */
 }
 input:invalid {
-  border: 2px solid red;
+  border-color: red;
 }
 
 button {

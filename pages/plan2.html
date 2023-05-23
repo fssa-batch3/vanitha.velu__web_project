@@ -4,121 +4,88 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diet plans</title>
+    <title>create your plans</title>
     <link rel="stylesheet" href="../assets/css/plan2.css" />
-    <link rel="stylesheet" href="../assets/css/diet2.css" />
-    <source link="" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
   </head>
   <body>
-    <div class="container1" id="content-1">
-      <div class="logo">
-        <img
-          src="../assets/images/large-removebg-preview_-removebg-preview (1).png"
-          height="100"
-          width="150"
-          alt=""
-        />
-      </div>
-      <div class="header">
-        <ul class="home">
-          <a href="../index2.html"><li>HOME</li></a>
-          <a href="./plan2.html"><li>DIET PLANS</li></a>
-          <a href="./diet2.html"><li>CONSULTATION</li></a>
-          <a href="./about2.html"> <li>ABOUT</li></a>
-          <a href="./contact2.html"> <li>CONTACT</li></a>
-          <a href="./login2.html"> <li>LOGIN</li></a>
-        </ul>
-      </div>
+    <div class="main">
+      <form id="diet_plan_form">
+        <h2>CREATE PLANS</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" required />
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required />
+        <label for="activity_level">Activity Level:</label>
+        <select id="activity_level" name="activity_level" required>
+          <option value="sedentary">Sedentary</option>
+          <option value="moderate">Moderate</option>
+          <option value="active">Active</option>
+        </select>
+        <label for="goal">Goal:</label>
+        <select id="goal" name="goal" required>
+          <option value="lose-weight">Lose Weight</option>
+          <option value="maintain-weight">Maintain Weight</option>
+          <option value="gain-weight">Gain Weight</option>
+        </select>
+        <a href="./weight loss2.html">
+          <button type="submit">Create Plan</button></a
+        >
+      </form>
     </div>
-    <div class="container2"></div>
 
-    <footer class="footer">
-      <div class="container4">
-        <div class="rap">
-          <div class="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#">Diet counselling</a></li>
-              <li><a href="#">Diet Food</a></li>
-              <li><a href="#">Diet chart</a></li>
-              <li><a href="#">Vitual consulation</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Get help</h4>
-            <ul>
-              <li><a href="#">Chat</a></li>
-              <li><a href="#">Consulting</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Follow us</h4>
-            <div class="social-links">
-              <a href="#"><i class="fa fa-instagram"></i></a>
-              <a href="#"><i class="fa fa-youtube-play"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
     <script>
-      let plans = [
-        {
-          planname: "weight gain",
-          image: "../assets/images/weight gain.jfif",
-          alt: "plan-img",
-        },
-        {
-          planname: "weight loss",
-          image: "../assets/images/weight loss.webp",
-          alt: "plan-img",
-        },
-        {
-          planname: "pregnancy diet",
-          image: "../assets/images/pregnant.jfif",
-          alt: "plan-img",
-        },
-        {
-          planname: "sugar diet",
-          image: "../assets/images/sugar.jfif",
-          alt: "plan-img",
-        },
-      ];
-      for (let i = 0; i <= plans.length - 1; i++) {
-        let div_card = document.createElement("div");
-        div_card.setAttribute("class", "image1");
+      const form = document.getElementById("diet_plan_form");
 
-        let insideDiv = document.createElement("div");
-        div_card.append(insideDiv);
+      const arr = [];
+      let diet_obj = {};
 
-        let a = document.createElement("a");
-        a.setAttribute(
-          "href",
-          "../pages/diet-details.html?plan=" + plans[i]["planname"]
-        );
-        insideDiv.append(a);
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-        let card_img = document.createElement("img");
-        card_img.setAttribute("src", plans[i]["image"]);
-        console.log(card_img);
-        card_img.setAttribute("height", "200");
-        card_img.setAttribute("width", "300");
-        a.append(card_img);
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const gender = document.getElementById("gender").value;
+        const height = document.getElementById("height").value;
+        const weight = document.getElementById("weight").value;
+        const activityLevel = document.getElementById("activity_level").value;
+        const goal = document.getElementById("goal").value;
 
-        let h3_card = document.createElement("h3");
-        h3_card.innerText = plans[i]["planname"];
-        div_card.append(h3_card);
+        let diet_obj = {
+          name,
+          age,
+          gender,
+          height,
+          weight,
+          activity_level,
+          goal,
+        };
 
-        let container2 = document.querySelector(".container2");
-        container2.append(div_card);
-      }
+        console.log(diet_obj);
+
+        if (window.localStorage.getItem("diet_details") === null) {
+          arr.push(diet_obj);
+          window.localStorage.setItem("diet_details", JSON.stringify(arr));
+        } else {
+          let local = window.localStorage.getItem("diet_details");
+          let json = JSON.parse(local);
+          arr.push(diet_obj);
+
+          json.push(arr);
+          window.localStorage.setItem("diet_details", JSON.stringify(json));
+          alert("Successfully posted");
+          window.open("/weight loss2.html");
+        }
+      });
     </script>
   </body>
 </html>
+-

@@ -45,6 +45,21 @@ h2 {
   font-size: 30px;
   font-weight: bold;
 }
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
 .footer {
   background-color: rgb(54, 51, 51);
   padding: 70px 0;

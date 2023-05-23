@@ -12,95 +12,35 @@
     />
   </head>
   <body>
-    <div class="container1" id="content-1">
-      <div class="logo">
-        <img
-          src="../assets/images/large-removebg-preview_-removebg-preview (1).png"
-          height="100"
-          width="150"
-          alt=""
-        />
-      </div>
-      <div class="header">
-        <ul class="home">
-          <a href="../index2.html"><li>HOME</li></a>
-          <a href="./plan2.html"><li>DIET PLANS</li></a>
-          <a href="./diet2.html"><li>CONSULTATION</li></a>
-          <a href="./about2.html"> <li>ABOUT</li></a>
-          <a href="./contact2.html"> <li>CONTACT</li></a>
-          <a href="./login2.html"> <li>LOGIN</li></a>
-        </ul>
-      </div>
-    </div>
-
+    <header>
+      <div class="wrapper">
+        <h1 class="logo">WELLNESS<span>DIET</span></h1>
+        <nav class="main-nav">
+          <ul>
+            <li>
+              <a href="../index.html">Home </a>
+            </li>
+            <li>
+              <a href="./about2.html">About</a>
+            </li>
+            <li>
+              <a href="./diet2.html">Consultation</a>
+            </li>
+            <li>
+              <a href="./active.html">Create plans</a>
+            </li>
+            <li>
+              <a href="./contact2.html">Contact Us</a>
+            </li>
+          
+          </ul>
+        </nav>
+    </header>
+    
     <div class="head">
       <h1>DIETITIAN'S</h1>
     </div>
-    <div class="container">
-      <!-- <div class="image">
-        <img src="../assets/images/padma.jpg" height="400" width="400" alt="" />
-        <h3 id="kamalesh">Dt.padmadharshini</h3>
-        <p>Dietitian & Branch manager.</p>
-        <a href="./form.html">
-          <div class="btn"><button>Book an Appoinment</button></div></a
-        >
-      </div>
-      <div class="image">
-        <img
-          src="../assets/images/ramya.webp"
-          height="400"
-          width="400"
-          alt=""
-        />
-        <h3>Dt.Ramya</h3>
-        <p>Nutrionist</p>
-        <a href="./form.html">
-          <div class="btn"><button>Book an Appoinment</button></div></a
-        >
-      </div>
-      <div class="image">
-        <img
-          src="../assets/images/vidhya.jpg"
-          height="400"
-          width="400"
-          alt=""
-        />
-        <h3>Dt.Vidhya</h3>
-        <p>Dietitian</p>
-        <a href="./form.html">
-          <div class="btn"><button>Book an Appoinment</button></div></a
-        >
-      </div>
-      <div class="image">
-        <img src="../assets/images/pavi.webp" height="400" width="400" alt="" />
-        <h3>Dt.Pavi</h3>
-        <p>Nutrionist</p>
-        <a href="./form.html">
-          <div class="btn"><button>Book an Appoinment</button></div></a
-        >
-      </div>
-      <div class="image">
-        <img
-          src="../assets/images/manoj.jpeg"
-          height="400"
-          width="400"
-          alt=""
-        />
-        <h3>Dt.Manoj</h3>
-        <p>Nutrionist & Quality Manager</p>
-        <a href="./form.html">
-          <div class="btn"><button>Book an Appoinment</button></div></a
-        >
-      </div>
-      <div class="image">
-        <img src="../assets/images/kavya.jpg" height="400" width="400" alt="" />
-        <h3>Dt.Kavya</h3>
-        <p>Dietitian</p>
-        <a href="./form.html">
-          <div class="btn"><button>Book an Appoinment</button></div></a
-        >
-      </div> -->
-    </div>
+    <div class="container"></div>
 
     <footer class="footer">
       <div class="container4">
@@ -159,10 +99,19 @@
         p_card.innerText = doctors[i]["spl"];
         div_card.append(p_card);
 
-        let btn_card = document.createElement("button");
-        // btn_card.setAttribute("href", "./form2.html");
+        let btn = document.createElement("button");
+        // btn.innerText = "Appointment";
+        btn.setAttribute("class", "batton");
+        div_card.append(btn);
+
+        let btn_card = document.createElement("a");
+        btn_card.setAttribute(
+          "href",
+          "./dietitian_detail.html?id=" + doctors[i]["id"]
+        );
+        // btn_card.setAttribute("class", "batton  ");
         btn_card.innerText = "Appointment";
-        div_card.append(btn_card);
+        btn.append(btn_card);
 
         let container = document.querySelector(".container");
         container.append(div_card);
@@ -174,5 +123,8 @@
         console.log(e);
       }
     </script>
+
+
+    
   </body>
 </html>
