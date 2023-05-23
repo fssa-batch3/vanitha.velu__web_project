@@ -26,12 +26,15 @@
           <div class="product-div-right">
             <span id="dietitian_name" class="product-name"></span>
             <span id="experience"></span>
+            <span id="timing"></span>
 
             <p id="about" class="product-description"></p>
             <div class="btn-groups">
-             <a href="./form2.html"> <button type="submit" class="add-cart-btn">
-                Book appoinment</a>
-              </button>
+              <a id="formDetail">
+                <button type="submit" class="add-cart-btn">
+                  Book appoinment
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -62,11 +65,17 @@
       let name = document.getElementById("dietitian_name");
       let years = document.getElementById("experience");
       let about = document.getElementById("about");
+      let timing = document.getElementById("timing");
 
       image.setAttribute("src", selectedUser["img"]);
       name.innerText = selectedUser["name"];
       years.innerText = selectedUser["Experience"];
+      timing.innerText = selectedUser["timing"];
       about.innerText = selectedUser["About"];
+
+      const appointment_link = document.getElementById("formDetail");
+      appointment_link.setAttribute("href", `./form2.html?id=${get_details}`);
+      console.log(appointment_link);
     </script>
   </body>
 </html>

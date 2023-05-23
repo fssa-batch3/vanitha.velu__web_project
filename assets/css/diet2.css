@@ -186,9 +186,7 @@ header::after {
   justify-content: center;
   gap: 30px;
 }
-/* .container img {
-  border-top-left-radius: 20px;
-} */
+
 .head {
   margin-left: 600px;
 }

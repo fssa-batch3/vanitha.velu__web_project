@@ -28,6 +28,10 @@
         <span>Experience</span>
       </div>
       <div class="inputBox">
+        <input id="timing" type="text" name="" required="required" />
+        <span>Timing</span>
+      </div>
+      <div class="inputBox">
         <input id="about" type="text" name="" required="required" />
         <span>About</span>
       </div>
@@ -53,6 +57,8 @@
 
         let About = document.getElementById("about").value;
 
+        let timing = document.getElementById("timing").value;
+
         let dietId = Date.now();
         console.log("dietId");
 
@@ -61,6 +67,7 @@
           name,
           spl,
           Experience,
+          timing,
           About,
           id: dietId,
         };

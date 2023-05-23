@@ -46,7 +46,7 @@
           ) {
             match = true;
             arr.push(defaultData[i]);
-            localStorage.setItem("login", JSON.stringify(arr[0]["user_email"]));
+            localStorage.setItem("login", JSON.stringify(arr[0]["user_id"]));
             break;
 
             alert("Success");
@@ -58,7 +58,7 @@
         if (match === true) {
           alert("log in");
 
-          window.location.href = ".\index.html";
+          window.location.href = "../index.html";
         } else {
           alert("invalid");
         }

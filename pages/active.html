@@ -24,30 +24,58 @@
               <li>
                 <a href="./about2.html">About</a>
               </li>
-              <li>
-                <a href="./diet2.html">Consultation</a>
-              </li>
+              
               <li>
                 <a href="./active.html">Create plans</a>
               </li>
               <li>
                 <a href="./contact2.html">Contact Us</a>
               </li>
-              <div class="nav_dropdown">
-                <button class="nav_dropbtn">Login</button>
-                <div class="nav_dropdown-content">
-                  <a href="./pages/login2.html">Dietitian</a>
-                  <a href="./pages/patient_login.html">Patient</a>
-                </div>
-              </div>
+              
             </ul>
           </nav>
       </header>
 
+
+      
+    <div class="main">
+      <form id="diet_plan_form">
+        <h2>CREATE PLANS</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" required />
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required />
+        <label for="activity_level">Activity Level:</label>
+        <select id="activity_level" name="activity_level" required>
+          <option value="sedentary">Sedentary</option>
+          <option value="moderate">Healthy</option>
+          <option value="active">Active</option>
+        </select>
+        <label for="goal">Goal:</label>
+        <select id="goal" name="goal" required>
+          <option value="lose-weight">Lose Weight</option>
+          <option value="maintain-weight">Maintain Weight</option>
+          <option value="gain-weight">Gain Weight</option>
+        </select>
+        <a href="./weight loss2.html">
+          <button type="submit">Create Plan</button></a
+        >
+      </form>
+    </div>
+
     <div class="active-life-section">
       <div class="image-container">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQavyCJ4vf8nqOMSYPPjTLfMinE66XzCSqW0ZRTUhLPlg&usqp=CAU&ec=48665701"
+          src="https://img.freepik.com/free-photo/slim-beautiful-woman-doing-sports-morning-park-doing-yoga_285396-4349.jpg?size=626&ext=jpg&ga=GA1.2.410745067.1679421520&semt=ais"
           alt="Active Life Image"
         />
       </div>
@@ -82,33 +110,14 @@
     <div class="active-life-section">
       <div class="image-container">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6drGuMm0fR4BguzVIRDhHkBWslu3YNE9G31CL0HnZw&usqp=CAU&ec=48665701"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6drGuMm0fR4BguzVIRDhHkBWslu3YNE9G31CL0HnZw&usqp=CAU&ec=48665701" 
           alt="Active Life Image"
         />
       </div>
       <div class="content">
         <h2>Healthy Life Section</h2>
         <p>
-          Active living is a lifestyle that integrates physical activity into
-          everyday routines, such as walking to the store or biking to work.
-          Active living is not a formalized exercise program or routine, but
-          instead means to incorporate physical activity, which is defined as
-          any form of movement, into everyday life. Active living brings
-          together urban planners, architects, transportation engineers, public
-          health professionals, activists and other professionals to build
-          places that encourage active living and physical activity. One example
-          includes efforts to build sidewalks, crosswalks, pedestrian crossing
-          signals, and other ways for children to walk safely to and from
-          school, as seen in the Safe Routes to School program. Recreational
-          opportunities (parks, fitness centres etc.) close to the home or
-          workplace, walking trails, and bike lanes for transportation also
-          contribute to a more active lifestyle. Active living includes any
-          physical activity or recreation activity and contributes to a
-          healthier lifestyle. Furthermore, active living addresses health
-          concerns, such as obesity and chronic disease, by helping people have
-          a physically active lifestyle. Communities that support active living
-          gain health benefits, economic advantages, and improved quality of
-          life.
+          A healthy diet may contain fruits, vegetables, and whole grains, and may include little to no processed food or sweetened beverages. The requirements for a healthy diet can be met from a variety of plant-based and animal-based foods, although additional sources of vitamin B12 are needed for those following a vegan diet.[4] Various nutrition guides are published by medical and governmental institutions to educate individuals on what they should be eating to be healthy. Nutrition facts labels are also mandatory in some countries to allow consumers to choose between foods based on the components relevant to health.
         </p>
         <button class="btn">Learn More</button>
       </div>
@@ -117,7 +126,7 @@
     <div class="active-life-section">
       <div class="image-container">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcS6ap_i7vHvO7DMcbsw4VaaJTScStX-B1xdArH5kLyw&usqp=CAU&ec=48665701"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcS6ap_i7vHvO7DMcbsw4VaaJTScStX-B1xdArH5kLyw&usqp=CAU&ec=48665701" 
           alt="Active Life Image"
         />
       </div>
@@ -150,39 +159,6 @@
     </div>
 
 
-    <div class="main">
-      <form id="diet_plan_form">
-        <h2>CREATE PLANS</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required />
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        <label for="height">Height (cm):</label>
-        <input type="number" id="height" name="height" required />
-        <label for="weight">Weight (kg):</label>
-        <input type="number" id="weight" name="weight" required />
-        <label for="activity_level">Activity Level:</label>
-        <select id="activity_level" name="activity_level" required>
-          <option value="sedentary">Sedentary</option>
-          <option value="moderate">Moderate</option>
-          <option value="active">Active</option>
-        </select>
-        <label for="goal">Goal:</label>
-        <select id="goal" name="goal" required>
-          <option value="lose-weight">Lose Weight</option>
-          <option value="maintain-weight">Maintain Weight</option>
-          <option value="gain-weight">Gain Weight</option>
-        </select>
-        <a href="./weight loss2.html">
-          <button type="submit">Create Plan</button></a
-        >
-      </form>
-    </div>
 
     <script>
       const form = document.getElementById("diet_plan_form");
@@ -261,5 +237,6 @@
           </div>
         </div>
       </footer>
+     
   </body>
 </html>

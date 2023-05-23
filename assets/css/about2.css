@@ -4,12 +4,6 @@ body {
   background: white;
   font-family: "QuickSand", sans-serif;
 }
-/* .main {
-  display: flex;
-}
-.image-section {
-  border-radius: 20px;
-} */
 
 .wrapper {
   width: 95%;
@@ -253,12 +247,33 @@ ul {
   color: aliceblue;
   background-color: rgb(74, 71, 71);
 }
-/* .btn button {
-  background-color: #62287b;
-  border: none;
-  border-radius: 10px;
-  height: 40px;
-} */
+
 a {
   text-decoration: none;
+}
+
+.about h1 {
+  margin-left: 400px;
+}
+.about {
+  width: 1200px;
+  margin-left: 150px;
+}
+.img1 {
+  display: flex;
+  width: 950px;
+}
+.img2 {
+  display: flex;
+  width: 950px;
+  margin-right: 30px;
+}
+.img3 {
+  display: flex;
+  width: 950px;
+  margin-left: 70px;
+}
+.main {
+  margin-left: 250px;
+  margin-top: 60px;
 }

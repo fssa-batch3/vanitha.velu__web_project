@@ -8,6 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  margin-top: 100px;
 }
 
 .image-container {
@@ -302,62 +303,55 @@ ul {
   color: aliceblue;
   background-color: rgb(74, 71, 71);
 }
-/* .btn button {
-    background-color: #62287b;
-    border: none;
-    border-radius: 10px;
-    height: 40px;
-  } */
+
 a {
   text-decoration: none;
 }
 
-form {
-  max-width: 500px;
-  margin: auto;
-}
 .main {
-  background-color: #1dbd88;
-  border-radius: 20px;
-  padding-left: 30px;
-  padding-top: 10px;
   width: 400px;
-  margin-left: 500px;
-  margin-top: 120px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin-top: 60px;
 }
-.main h2 {
-  margin-left: 80px;
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
-  margin-left: 5px;
-}
-
-input,
-select {
-  display: block;
-  width: 80%;
-  margin-left: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: rgb(0, 136, 255);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 120px;
   margin-bottom: 10px;
 }
 
-button:hover {
-  background-color: #fff;
-  color: rgb(0, 136, 255);
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #03c988;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #03c988;
+}
+
+a {
+  text-decoration: none;
 }
